@@ -26,15 +26,17 @@ function preguntarEdad() {
 
 
 //objeto
-
-
 function Usuario(nombre) {
+	//atributos
 	this.nombre	  = nombre
 	this.estado   = "Esta asignado"
+
+	//metodo
 	this.nombreUsuario = function() {
 		return 'Usuario: ' + this.nombre
 	}
 
+	//metodo
 	this.suEstado = function() {
 		return this.estado
 	}
@@ -42,8 +44,10 @@ function Usuario(nombre) {
 
 var nombre  = prompt("Cual es tu nombre: ");
 
+//instanciacion o creacion de objeto
 var usuario = new Usuario(nombre);
 
+//invocacion de metodos de el objeto usuario
 console.log(usuario.nombreUsuario())
 console.log(usuario.suEstado())
 
