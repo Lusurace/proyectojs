@@ -1,5 +1,7 @@
+
+
 //objeto cliente
-function Usuario(nombre, apellido, mail, telefono){
+$(function Usuario(nombre, apellido, mail, telefono){
 	this.nombre = nombre
 	this.apellido = apellido
 	this.mail = mail
@@ -8,11 +10,13 @@ function Usuario(nombre, apellido, mail, telefono){
 	this.obtenerNombreUsuario = function() {
 		return this.nombre + " " + this.apellido +" "+"Te enviaremos un mail a la brevedad"
 	}
-}
 
+console.log ("clase11")
+}
+)
 
 //objeto servicios a vender
-function servicio(nombre, precio, caracteristica,imagen){
+function Servicio(nombre, precio, caracteristica,imagen){
 	this.nombre = nombre
 	this.precio = precio
 	this.caracteristica = caracteristica
@@ -20,12 +24,19 @@ function servicio(nombre, precio, caracteristica,imagen){
 }
 
 
-//objeto carrito (fijarme si quiero guardar el mail)
+//objeto carrito 
 
-function carrito(nombre, precio,imagen){
-	this.nombre = nombre
+function Carrito(precio){
+	this.productos = []
 	this.precio = precio
-	this.imagen = imagen
+
+	this.agregarProducto = function(producto) {
+		this.productos.push(producto)
+	}
+
+	this.sumarPrecio = function(precio) {
+		this.precio = this.precio + precio
+	}
 }
 
 

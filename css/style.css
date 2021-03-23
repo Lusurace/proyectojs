@@ -98,12 +98,10 @@ select {
   margin: 2%;
   padding: 2%; }
 
-.card{
-  display;flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+button .btn btn-primary{  
+  display: none;
+  text-align: center;
+
 }
 
 /*footer*/
