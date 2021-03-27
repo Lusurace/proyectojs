@@ -84,8 +84,8 @@ const pintarCarrito = () => {
         templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
 
         //botones
-        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
-        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-primary').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-secondary').dataset.id = producto.id
 
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
@@ -130,14 +130,14 @@ const pintarFooter = () => {
 
 const btnAumentarDisminuir = e => {
     // console.log(e.target.classList.contains('btn-info'))
-    if (e.target.classList.contains('btn-info')) {
+    if (e.target.classList.contains('btn-primary')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
         carrito[e.target.dataset.id] = { ...producto }
         pintarCarrito()
     }
 
-    if (e.target.classList.contains('btn-danger')) {
+    if (e.target.classList.contains('btn-secondary')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad--
         if (producto.cantidad === 0) {

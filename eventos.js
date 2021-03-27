@@ -1,4 +1,4 @@
-//eventos de productos y suma de carrito
+//eventos de validacion
 $("#nombre").keypress( function(evento) {
     if (evento.keyCode > 47 && evento.keyCode < 58) {
         return false;
@@ -17,86 +17,10 @@ $("#tel").keypress( function(evento) {
     }
 });
 
-//
-// $("#btnLogo").click( function() {
-// 	console.log(logo.precio)
-// 	let precio = logo.precio
-//
-// 	carrito.sumarPrecio(precio)
-// 	carrito.agregarProducto(logo)
-//
-// 	console.log(carrito)
-//
-// });
-//
-// $("#btnBranding").click( function() {
-// 	console.log(branding.precio)
-// 	let precio = branding.precio
-//
-//
-// 	carrito.sumarPrecio(precio)
-// 	carrito.agregarProducto(branding)
-//
-// 	console.log( "$" + carrito.precio)
-//
-// });
-//
-// $("#btnContenido").click( function() {
-// 	console.log(contenido.precio)
-// 	let precio = contenido.precio
-//
-// 	carrito.sumarPrecio(precio)
-// 	carrito.agregarProducto(contenido)
-//
-// 	console.log( "$" + carrito.precio)
-//
-// });
-//
-//
-// $("#btnProducto").click( function() {
-// 	console.log(producto.precio)
-// 	let precio = producto.precio
-//
-//
-// 	carrito.sumarPrecio(precio)
-// 	carrito.agregarProducto(producto)
-//
-// 	console.log( "$" + carrito.precio)
-// });
-//
-//
-//
-//
-// $("#btnLanding").click( function() {
-// 	console.log(landing.precio)
-// 	let precio = landing.precio
-//
-//
-// 	carrito.sumarPrecio(precio)
-// 	carrito.agregarProducto(landing)
-//
-// 	console.log( "$" + carrito.precio)
-//
-// });
-//
-//
-//
-// $("#btnTienda").click( function() {
-// 	console.log(tienda.precio)
-// 	let precio = tienda.precio
-//
-//
-// 	carrito.sumarPrecio(precio)
-// 	carrito.agregarProducto(tienda)
-//
-// 	console.log( "$" + carrito.precio)
-//
-// });
 
 
 
-//formulario de cliente (cambio jquery)
-
+//formulario de cliente 
 
 $("#enviar").click( function() {
 	guardarUsuario()
