@@ -10,7 +10,7 @@ $("#btnLogo").click( function() {
 	carrito.sumarPrecio(precio)
 	carrito.agregarProducto(logo)
 	
-	console.log( "$" + carrito.precio)
+	console.log(carrito)
 
 });
 
@@ -107,7 +107,7 @@ function guardarUsuario() {
 
 	}
 
-	localStorage.setItem(jsonUsuario.nombre, apellido, mail)
+	localStorage.setItem(jsonUsuario.nombre, apellido, mail, tel, marca)
 }
 
 
