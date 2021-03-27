@@ -11,7 +11,6 @@ $(function Usuario(nombre, apellido, mail, telefono){
 		return this.nombre + " " + this.apellido +" "+"Te enviaremos un mail a la brevedad"
 	}
 
-console.log ("clase11")
 }
 )
 
