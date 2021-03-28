@@ -40,8 +40,6 @@ function Carrito(precio){
 
 
 
-//objeto mensaje o formulario
-
 
 
 

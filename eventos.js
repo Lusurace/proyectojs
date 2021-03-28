@@ -1,3 +1,5 @@
+
+
 //eventos de validacion
 $("#nombre").keypress( function(evento) {
     if (evento.keyCode > 47 && evento.keyCode < 58) {
@@ -48,3 +50,9 @@ function guardarUsuario() {
 
 	localStorage.setItem(jsonUsuario.nombre, apellido, mail, tel, marca)
 }
+
+//animaciones
+
+$("#contactanos").click(function(){ 
+  $("#form").slideToggle(1000, function() {  }); 
+});

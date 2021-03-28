@@ -6,38 +6,35 @@ const producto = new Servicio("Creación de Producto",2000,"Vemos centimetro por
 const landing = new Servicio("LandingPage",7000,"Nos encargamos de definir tu pagina de presentación y tu posicionamiento web","img/brand5.jpg")
 const tienda = new Servicio("Tienda online",15000,"Tienda online personalizada","img/brand6.jpg")
 
-//carrito
-// const carrito = new Carrito(0)
 
 //array de servicios//
 
 let arServicios = [logo, branding, contenido, producto, landing, tienda]
 localStorage.setItem("servicios", JSON.stringify(arServicios))
 
-//ajax no funciona aun
+//ajax 
 
-$("#mensaje").click(function(){ // Asociamos la llamada AJAX al evento click
+$(document).ready(function(){ 
   $.ajax ({
-    url: "./mensaje.json",  //URL del servidor, archivo JSON
-    type: "GET",                  //tipo de solicitud
-    dataType: "json"            //tipo de dato
-  }).done(function (resultado) {    //callback con ejecución correcta
+    url: "https://restcountries.eu/rest/v2/all",  
+    type: "GET",                  
+    dataType: "json"            
+  }).done(function (resultado) {    
        console.log(resultado);
     })
-    .fail(function (xhr, status, error) {   //callback con ejecución con error
+    .fail(function (xhr, status, error) {  
        console.log(xhr);
        console.log(status);
        console.log(error);
     })
 });
 
-
+//templates
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
-// cards.addEventListener('click', e => { addCarrito(e) });
 $('.card').click(function (event) {
     addCarrito(event)
 });
@@ -49,22 +46,18 @@ $('#items').click(function (event) {
 // Agregar al carrito
 const addCarrito = e => {
     if (e.target.classList.contains('btn-primary')) {
-        // console.log(e.target.dataset.id)
-        // console.log(e.target.parentElement)
         setCarrito(e.target.parentElement)
     }
     e.stopPropagation()
 }
 
 const setCarrito = item => {
-    // console.log(item)
     const producto = {
         title: item.querySelector('h5').textContent,
         precio: item.querySelector('p').textContent * 1000,
         id: item.querySelector('button').dataset.id,
         cantidad: 1
     }
-    // console.log(producto)
     if (carrito.hasOwnProperty(producto.id)) {
         producto.cantidad = carrito[producto.id].cantidad + 1
     }
@@ -109,7 +102,6 @@ const pintarFooter = () => {
     // sumar cantidad y sumar totales
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
     const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-    // console.log(nPrecio)
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
@@ -129,7 +121,6 @@ const pintarFooter = () => {
 
 
 const btnAumentarDisminuir = e => {
-    // console.log(e.target.classList.contains('btn-info'))
     if (e.target.classList.contains('btn-primary')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
